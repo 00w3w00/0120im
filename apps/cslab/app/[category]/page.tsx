@@ -4,7 +4,6 @@ import { categories } from "@/data/categories"
 import { getQuestionsByCategoryId } from "@/data/questions"
 import { Suspense } from "react"
 import Script from "next/script"
-import { Button } from "@repo/ui/components/button"
 import { Badge } from "@repo/ui/components/badge"
 import {
 	Card,
@@ -13,7 +12,6 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@repo/ui/components/card"
-import { Link, Star } from "lucide-react"
 import { Breadcrumb } from "@/components/breadcrumb"
 import QuestionList from "@/components/questionList"
 

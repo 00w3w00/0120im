@@ -19,7 +19,7 @@ const CSInterviewApp = () => {
 					<h1 className="text-2xl font-bold mb-4 md:text-4xl sm:text-3xl">
 						개발자 CS 면접 질문 모음집
 					</h1>
-					<p className="text-md sm:text-xl md:text-2xl  opacity-90 max-w-3xl">
+					<p className="text-sm sm:text-md md:text-xl  opacity-90 max-w-3xl">
 						٩( ͡◉ ̯ ͡◉)۶ 여러분의 취뽀를 기원합니다 ٩( ͡◉ ̯ ͡◉)۶
 					</p>
 				</div>
