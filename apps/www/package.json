@@ -5,7 +5,7 @@
 	"private": true,
 	"scripts": {
 		"dev": "next dev --turbopack --port 3001",
-		"build": "next build && pnpm run deploy",
+		"build": "next build",
 		"start": "next start",
 		"lint": "next lint --max-warnings 0",
 		"deploy": "touch out/.nojekyll && gh-pages -d out --dotfiles",
