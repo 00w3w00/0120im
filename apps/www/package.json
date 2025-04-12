@@ -5,13 +5,11 @@
 	"private": true,
 	"scripts": {
 		"dev": "next dev --turbopack --port 3001",
-		"build": "next build",
+		"build": "next build && pnpm run deploy",
 		"start": "next start",
 		"lint": "next lint --max-warnings 0",
-		"check-types": "tsc --noEmit",
-		"preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
-		"cloudflare:deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
-		"cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
+		"deploy": "touch out/.nojekyll && gh-pages -d out -t true",
+		"check-types": "tsc --noEmit"
 	},
 	"dependencies": {
 		"@opennextjs/cloudflare": "1.0.0-beta.2",
@@ -20,6 +18,7 @@
 	"devDependencies": {
 		"@repo/eslint-config": "workspace:*",
 		"@repo/typescript-config": "workspace:*",
+		"gh-pages": "^6.3.0",
 		"wrangler": "^4.10.0"
 	}
 }
