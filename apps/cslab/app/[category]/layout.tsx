@@ -1,4 +1,3 @@
-export const dynamic = "force-static"
 import { categories } from "@/data/categories"
 import { notFound } from "next/navigation"
 import Script from "next/script"

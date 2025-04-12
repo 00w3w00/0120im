@@ -1,5 +1,4 @@
 import { ImageResponse } from "next/og"
-import { categories } from "@/data/categories"
 
 export const size = {
 	width: 1200,
@@ -23,14 +22,7 @@ export function generateImageMetadata() {
 }
 
 // 이미지 생성 함수
-export default async function Image({
-	params,
-}: {
-	params: Promise<{ category: string }>
-}) {
-	const categoryParams = (await params).category
-	const category = categories.find((c) => c.path === categoryParams)
-
+export default async function Image() {
 	return new ImageResponse(
 		(
 			<div

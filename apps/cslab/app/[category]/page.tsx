@@ -1,3 +1,5 @@
+export const dynamic = "force-static"
+
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { categories } from "@/data/categories"

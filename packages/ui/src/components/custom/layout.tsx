@@ -15,9 +15,7 @@ export const Layout = ({ children }: { children?: ReactNode }) => {
 
 			<footer className="bg-gray-100 border-t border-gray-200 py-8">
 				<div className="max-w-4xl mx-auto px-4 text-center">
-					<p className="text-gray-600">
-						&copy; {new Date().getFullYear()} MDX 블로그 예제
-					</p>
+					<p className="text-gray-600">&copy; {new Date().getFullYear()}</p>
 				</div>
 			</footer>
 		</div>
