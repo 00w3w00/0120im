@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
 			userAgent: "*",
 			allow: "/",
 		},
-		sitemap: "https://cslab.0120.com/sitemap.xml",
+		sitemap: "https://cs-lab.0120.im/sitemap.xml",
 	}
 }

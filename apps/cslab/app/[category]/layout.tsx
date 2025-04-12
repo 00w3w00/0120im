@@ -15,6 +15,9 @@ export default async function CategoryLayout({
 	const categoryParams = (await params).category
 
 	const category = categories.find((c) => c.path === categoryParams)
+	if (categoryParams === "robots.txt" || categoryParams === "sitemap.xml") {
+		return children
+	}
 
 	if (!category) {
 		notFound()
@@ -52,13 +55,13 @@ export default async function CategoryLayout({
 				"@type": "ListItem",
 				position: 1,
 				name: "홈",
-				item: "https://cslab.0120.com",
+				item: "https://cs-lab.0120.im/",
 			},
 			{
 				"@type": "ListItem",
 				position: 2,
 				name: category.title,
-				item: `https://cslab.0120.com/${category.path}`,
+				item: `https://cs-lab.0120.im/${category.path}`,
 			},
 		],
 	}

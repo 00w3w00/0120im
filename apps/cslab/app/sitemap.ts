@@ -1,9 +1,9 @@
 // app/sitemap.ts
-import { MetadataRoute } from "next"
 import { categories } from "@/data/categories"
+import { MetadataRoute } from "next"
 
 export default function sitemap(): MetadataRoute.Sitemap {
-	const baseUrl = "https://cs-interview.example.com"
+	const baseUrl = "https://cs-lab.0120.im/"
 
 	// 메인 페이지
 	const mainRoute = {

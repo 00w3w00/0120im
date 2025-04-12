@@ -43,13 +43,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 			...category.seoKeywords,
 		],
 		alternates: {
-			canonical: `https://cslab.0120.com/${category.path}`,
+			canonical: `https://cs-lab.0120.im/${category.path}`,
 		},
 		openGraph: {
 			title: `${category.title} 면접 질문 모음`,
 			description: category.description,
 			type: "website",
-			url: `https://cslab.0120.com/${category.path}`,
+			url: `https://cs-lab.0120.im/${category.path}`,
 			images: [
 				{
 					url: `/api/og?title=${encodeURIComponent(category.title)} 면접 질문&category=${encodeURIComponent(category.title)}`,
@@ -80,15 +80,15 @@ export default async function CategoryPage({ params }: Props) {
 	const categoryParams = (await params).category
 
 	const category = categories.find((c) => c.path === categoryParams)
-
+	if (categoryParams === "robots.txt" || categoryParams === "sitemap.xml") {
+		return
+	}
 	if (!category) {
 		notFound()
 	}
 
-	// 해당 카테고리의 질문 목록 가져오기
 	const questions = getQuestionsByCategoryId(category.id)
 
-	// JSON-LD 데이터 생성
 	const categoryJsonLd = {
 		"@context": "https://schema.org",
 		"@type": "FAQPage",

@@ -5,9 +5,8 @@ import "./globals.css"
 import type { Metadata, Viewport } from "next"
 import { Layout } from "@repo/ui/components/custom/layout"
 import Script from "next/script"
-import Link from "next/link"
 export const metadata: Metadata = {
-	metadataBase: new URL("https://cslab.0120.com"),
+	metadataBase: new URL("https://cs-lab.0120.im/"),
 	title: {
 		template: "%s | 개발자 CS 면접 질문 모음집",
 		default: "개발자 CS 면접 질문 모음집",
@@ -23,9 +22,9 @@ export const metadata: Metadata = {
 		apple: "/apple-icon.png",
 	},
 	alternates: {
-		canonical: "https://cslab.0120.com",
+		canonical: "https://cs-lab.0120.im/",
 		languages: {
-			"ko-KR": "https://cslab.0120.com",
+			"ko-KR": "https://cs-lab.0120.im/",
 		},
 	},
 }
@@ -40,14 +39,14 @@ const jsonLd = {
 	"@context": "https://schema.org",
 	"@type": "WebSite",
 	name: "개발자 CS 면접 질문 모음집",
-	url: "https://cslab.0120.com",
+	url: "https://cs-lab.0120.im/",
 	description: "개발자 기술 면접 준비를 위한 필수 CS 질문 모음",
 	publisher: {
 		"@type": "Organization",
 		name: "개발자 면접 준비",
 		logo: {
 			"@type": "ImageObject",
-			url: "https://cslab.0120.com/logo.png",
+			url: "https://cs-lab.0120.im/logo.png",
 		},
 	},
 }
