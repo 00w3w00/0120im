@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-page-custom-font */
-export const dynamic = "force-static"
 import "@repo/ui/globals.css"
 import "./globals.css"
 import type { Metadata, Viewport } from "next"
