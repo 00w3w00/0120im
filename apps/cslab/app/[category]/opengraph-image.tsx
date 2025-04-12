@@ -9,9 +9,6 @@ export const size = {
 // 콘텐츠 유형 설정
 export const contentType = "image/png"
 
-// 에지 런타임 사용
-export const runtime = "edge"
-
 export function generateImageMetadata({
 	params,
 }: {

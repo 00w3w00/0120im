@@ -7,9 +7,6 @@ export const size = {
 
 export const contentType = "image/png"
 
-// 에지 런타임 사용
-export const runtime = "edge"
-
 export function generateImageMetadata() {
 	return [
 		{

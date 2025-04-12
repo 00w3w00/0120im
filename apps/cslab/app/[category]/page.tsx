@@ -111,7 +111,7 @@ export default async function CategoryPage({ params }: Props) {
 			/>
 
 			<div className="min-h-screen bg-gray-50 font-sans">
-				<div className="bg-gray-50  sticky top-0 py-2  z-10 backdrop-blur-sm">
+				<div className="bg-gray-50  sticky top-0 py-2  z-10 backdrop-blur-sm max-w-5xl w-full">
 					<Suspense fallback={<div className="h-6" />}>
 						<Breadcrumb
 							items={[
