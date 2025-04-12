@@ -12,7 +12,6 @@ export const contentType = "image/png"
 // 에지 런타임 사용
 export const runtime = "edge"
 
-// generateImageMetadata 함수를 사용하여 동적 경로에 대한 이미지 메타데이터 생성
 export function generateImageMetadata({
 	params,
 }: {
@@ -35,10 +34,10 @@ export function generateImageMetadata({
 export default async function Image({
 	params,
 }: {
-	params: { category: string }
+	params: Promise<{ category: string }>
 }) {
-	const categoryParam = params.category
-	const category = categories.find((c) => c.path === categoryParam)
+	const categoryParams = (await params).category
+	const category = categories.find((c) => c.path === categoryParams)
 
 	// 카테고리가 없을 경우 기본 이미지 반환
 	if (!category) {

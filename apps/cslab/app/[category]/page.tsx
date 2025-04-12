@@ -111,7 +111,7 @@ export default async function CategoryPage({ params }: Props) {
 			/>
 
 			<div className="min-h-screen bg-gray-50 font-sans">
-				<div className="bg-gray-50 flex items-center justify-between mb-4 sticky top-0 py-2 px-6 z-10 backdrop-blur-sm">
+				<div className="bg-gray-50  sticky top-0 py-2  z-10 backdrop-blur-sm">
 					<Suspense fallback={<div className="h-6" />}>
 						<Breadcrumb
 							items={[
@@ -120,13 +120,6 @@ export default async function CategoryPage({ params }: Props) {
 							]}
 						/>
 					</Suspense>
-
-					<Button variant="outline" size="sm" asChild>
-						<Link href="/favorites">
-							<Star className="mr-2 h-4 w-4" />
-							즐겨찾기 보기
-						</Link>
-					</Button>
 				</div>
 
 				<main className="mx-auto pb-8  flex justify-center px-6">
