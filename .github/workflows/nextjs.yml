@@ -71,6 +71,10 @@ jobs:
       - name: Build with Turborepo
         run: pnpm turbo run build --filter=www
 
+      # Add .nojekyll file to prevent GitHub Pages from using Jekyll
+      - name: Add .nojekyll file
+        run: touch ./apps/www/out/.nojekyll
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
