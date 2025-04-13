@@ -41,7 +41,7 @@ export default async function Image() {
 				<div style={{ fontSize: 64, opacity: 0.8 }}>CS 면접 질문 모음집</div>
 
 				<div style={{ fontSize: 36, opacity: 0.7 }}>
-					٩( ͡◉ ̯ ͡◉)۶ 여러분의 취뽀를 기원합니다 ٩( ͡◉ ̯ ͡◉)۶
+					여러분의 취뽀를 기원합니다 🌟
 				</div>
 			</div>
 		),
