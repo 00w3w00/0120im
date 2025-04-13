@@ -38,7 +38,7 @@ export default function QuestionList({ questions }: QuestionListProps) {
 	return (
 		<div className="space-y-6">
 			{/* 필터링 컨트롤 */}
-			<Card>
+			<Card className="gap-2">
 				<CardHeader className="pb-3">
 					<CardTitle>질문 검색 및 필터</CardTitle>
 					<CardDescription>
@@ -47,7 +47,7 @@ export default function QuestionList({ questions }: QuestionListProps) {
 				</CardHeader>
 				<CardContent>
 					<div className="flex flex-col sm:flex-row gap-4">
-						<div className="relative flex-1">
+						<div className="relative flex-1 pb-4">
 							<Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
 							<Input
 								type="text"
@@ -60,9 +60,10 @@ export default function QuestionList({ questions }: QuestionListProps) {
 					</div>
 				</CardContent>
 				<CardFooter className="pt-0 border-t flex justify-between items-center">
-					<div className="text-sm text-muted-foreground">
-						{filteredQuestions.length}개의 질문이 있습니다
-					</div>
+					<p className="text-sm text-muted-foreground">
+						별표(⭐) 아이콘을 클릭하여 자주 복습할 질문을 즐겨찾기에 추가하세요.
+					</p>
+					<div className="text-sm text-muted-foreground"></div>
 				</CardFooter>
 			</Card>
 

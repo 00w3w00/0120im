@@ -1,6 +1,12 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 import { NextConfig } from "next"
-
 /** @type {import('next').NextConfig} */
+const withPWA = require("next-pwa")({
+	dest: "public",
+	register: true,
+	skipWaiting: true,
+})
+
 const nextConfig: NextConfig = {
 	images: {
 		remotePatterns: [
@@ -15,4 +21,4 @@ const nextConfig: NextConfig = {
 		],
 	},
 }
-export default nextConfig
+export default withPWA(nextConfig)

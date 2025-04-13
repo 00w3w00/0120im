@@ -4,6 +4,7 @@ import "./globals.css"
 import type { Metadata, Viewport } from "next"
 import { Layout } from "@repo/ui/components/custom/layout"
 import Script from "next/script"
+import { Analytics } from "@vercel/analytics/react"
 export const metadata: Metadata = {
 	metadataBase: new URL("https://cs-lab.0120.im/"),
 	title: {
@@ -56,6 +57,7 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="ko">
+			<Analytics />
 			<Script
 				id="json-data"
 				type="application/ld+json"

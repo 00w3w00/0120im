@@ -12,14 +12,17 @@
 	},
 	"dependencies": {
 		"@repo/ui": "workspace:*",
+		"@vercel/analytics": "^1.5.0",
 		"fs": "0.0.1-security",
 		"glob": "^11.0.1",
 		"gray-matter": "^4.0.3",
 		"next-mdx-remote": "^5.0.0",
+		"next-pwa": "^5.6.0",
 		"path": "^0.12.7"
 	},
 	"devDependencies": {
 		"@repo/eslint-config": "workspace:*",
-		"@repo/typescript-config": "workspace:*"
+		"@repo/typescript-config": "workspace:*",
+		"@types/next-pwa": "^5.6.9"
 	}
 }

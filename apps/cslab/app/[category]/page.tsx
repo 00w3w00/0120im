@@ -100,7 +100,7 @@ export default async function CategoryPage({ params }: Props) {
 			/>
 
 			<div className="min-h-screen bg-gray-50 font-sans">
-				<div className="bg-gray-50  sticky top-0 py-2  z-10 backdrop-blur-sm  w-full">
+				{/* <div className="px-6 py-3 bg-gray-50  border-b  sticky top-0 py-2  z-10 backdrop-blur-sm  w-full mb-4">
 					<Suspense fallback={<div className="h-6" />}>
 						<Breadcrumb
 							items={[
@@ -109,9 +109,9 @@ export default async function CategoryPage({ params }: Props) {
 							]}
 						/>
 					</Suspense>
-				</div>
+				</div> */}
 
-				<main className="mx-auto pb-8  flex justify-center px-6">
+				<main className="mx-auto pb-8  flex justify-center px-6 pt-4">
 					<div className="max-w-5xl w-full">
 						<div className="mb-8">
 							<Card className={`${category.color.split(" ")[0]} border-none`}>
@@ -139,8 +139,7 @@ export default async function CategoryPage({ params }: Props) {
 								</CardContent>
 							</Card>
 						</div>
-
-						{/* 질문 통계 카드 */}
+						{/* 질문 통계 카드
 						<div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
 							<Card>
 								<CardHeader className="pb-2">
@@ -162,8 +161,7 @@ export default async function CategoryPage({ params }: Props) {
 									</p>
 								</CardContent>
 							</Card>
-						</div>
-
+						</div> */}
 						<QuestionList questions={questions} categoryPath={category.path} />
 					</div>
 				</main>
