@@ -31,18 +31,16 @@ export default async function Image() {
 					width: "100%",
 					height: "100%",
 					background: "linear-gradient(to right, #3b82f6, #8b5cf6)",
+					gap: "16px",
 					color: "white",
-					fontSize: 64,
 					fontWeight: "bold",
 					textAlign: "center",
 					padding: "40px",
 				}}
 			>
-				<div style={{ fontSize: 32, marginBottom: 24, opacity: 0.8 }}>
-					CS 면접 질문 모음집
-				</div>
+				<div style={{ fontSize: 64, opacity: 0.8 }}>CS 면접 질문 모음집</div>
 
-				<div style={{ fontSize: 36, marginTop: "auto", opacity: 0.7 }}>
+				<div style={{ fontSize: 36, opacity: 0.7 }}>
 					٩( ͡◉ ̯ ͡◉)۶ 여러분의 취뽀를 기원합니다 ٩( ͡◉ ̯ ͡◉)۶
 				</div>
 			</div>

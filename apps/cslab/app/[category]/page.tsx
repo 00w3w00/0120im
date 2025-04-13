@@ -50,22 +50,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 			description: category.description,
 			type: "website",
 			url: `https://cs-lab.0120.im/${category.path}`,
-			images: [
-				{
-					url: `/api/og?title=${encodeURIComponent(category.title)} 면접 질문&category=${encodeURIComponent(category.title)}`,
-					width: 1200,
-					height: 630,
-					alt: `${category.title} 면접 질문 모음`,
-				},
-			],
 		},
 		twitter: {
 			card: "summary_large_image",
 			title: `${category.title} 면접 질문 모음`,
 			description: category.description,
-			images: [
-				`/api/og?title=${encodeURIComponent(category.title)} 면접 질문&category=${encodeURIComponent(category.title)}`,
-			],
 		},
 	}
 }
