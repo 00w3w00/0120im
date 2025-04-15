@@ -1,7 +1,7 @@
 export default function Home() {
 	return (
 		<div className="">
-			<span className="text-5xl text-blue-950">Branch : WWW </span>
+			<span className="text-4xl text-blue-950">Branch : WWW </span>
 		</div>
 	)
 }

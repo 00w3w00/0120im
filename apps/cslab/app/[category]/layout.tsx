@@ -54,7 +54,7 @@ export default async function CategoryLayout({
 				"@type": "ListItem",
 				position: 1,
 				name: "홈",
-				item: "https://cs-lab.0120.im/",
+				item: "https://cs-lab.0120.im",
 			},
 			{
 				"@type": "ListItem",

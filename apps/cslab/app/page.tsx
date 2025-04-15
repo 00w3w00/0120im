@@ -15,8 +15,8 @@ const CSInterviewApp = () => {
 	return (
 		<div className="min-h-screen bg-gray-50 font-sans">
 			{/* 헤더 */}
-			<div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-8 sm:py-10 md:py-12 px-6">
-				<div className="container mx-auto max-w-5xl">
+			<div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-8 sm:py-10 md:py-12 px-4">
+				<div className="container mx-auto max-w-4xl">
 					<h1 className="text-2xl font-bold mb-4 md:text-4xl sm:text-3xl">
 						개발자 CS 면접 질문 모음집
 					</h1>
@@ -27,8 +27,8 @@ const CSInterviewApp = () => {
 			</div>
 
 			{/* 메인 컨텐츠 */}
-			<main className="container mx-auto  py-5 bg-gray flex justify-center px-6 ">
-				<div className="max-w-5xl w-full">
+			<main className=" mx-auto  py-5 bg-gray flex justify-center px-4">
+				<div className="max-w-4xl w-full">
 					<div className="mb-5 ">
 						<div className="flex gap-1 items-center w-full">
 							<Badge

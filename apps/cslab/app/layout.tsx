@@ -5,8 +5,11 @@ import type { Metadata, Viewport } from "next"
 import { Layout } from "@repo/ui/components/custom/layout"
 import Script from "next/script"
 import { Analytics } from "@vercel/analytics/react"
+import { Toaster } from "@repo/ui/components/sonner"
+import { FavoritesProvider } from "@/context/favoritesContext"
+
 export const metadata: Metadata = {
-	metadataBase: new URL("https://cs-lab.0120.im/"),
+	metadataBase: new URL("https://cs-lab.0120.im"),
 	title: {
 		template: "%s | 개발자 CS 면접 질문 모음집",
 		default: "개발자 CS 면접 질문 모음집",
@@ -22,9 +25,9 @@ export const metadata: Metadata = {
 		apple: "/apple-icon.png",
 	},
 	alternates: {
-		canonical: "https://cs-lab.0120.im/",
+		canonical: "https://cs-lab.0120.im",
 		languages: {
-			"ko-KR": "https://cs-lab.0120.im/",
+			"ko-KR": "https://cs-lab.0120.im",
 		},
 	},
 }
@@ -39,15 +42,11 @@ const jsonLd = {
 	"@context": "https://schema.org",
 	"@type": "WebSite",
 	name: "개발자 CS 면접 질문 모음집",
-	url: "https://cs-lab.0120.im/",
+	url: "https://cs-lab.0120.im",
 	description: "개발자 기술 면접 준비를 위한 필수 CS 질문 모음",
 	publisher: {
 		"@type": "Organization",
 		name: "개발자 면접 준비",
-		logo: {
-			"@type": "ImageObject",
-			url: "https://cs-lab.0120.im/logo.png",
-		},
 	},
 }
 export default function RootLayout({
@@ -78,7 +77,10 @@ export default function RootLayout({
 				/>
 			</head>
 			<body>
-				<Layout>{children}</Layout>
+				<FavoritesProvider>
+					<Toaster />
+					<Layout>{children}</Layout>
+				</FavoritesProvider>
 			</body>
 		</html>
 	)
