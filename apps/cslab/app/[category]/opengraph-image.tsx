@@ -7,19 +7,30 @@ export const size = {
 
 export const contentType = "image/png"
 
-export function generateImageMetadata() {
+export async function generateImageMetadata({
+	params,
+}: {
+	params: Promise<{ category: string }>
+}) {
+	const { category } = await params
 	return [
 		{
 			id: "og-image",
 			size,
 			contentType,
-			alt: `CS 면접 질문 모음집`,
+			alt: `${category} 면접 질문 모음집`,
 		},
 	]
 }
 
 // 이미지 생성 함수
-export default async function Image() {
+export default async function Image({
+	params,
+}: {
+	params: Promise<{ category: string }>
+}) {
+	const { category } = await params
+
 	return new ImageResponse(
 		(
 			<div
@@ -38,7 +49,9 @@ export default async function Image() {
 					padding: "40px",
 				}}
 			>
-				<div style={{ fontSize: 64, opacity: 0.8 }}>CS 면접 질문 모음집</div>
+				<div style={{ fontSize: 64, opacity: 0.8 }}>
+					{category} 면접 질문 모음집
+				</div>
 
 				<div style={{ fontSize: 36, opacity: 0.7 }}>
 					여러분의 취뽀를 기원합니다 🌟

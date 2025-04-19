@@ -14,9 +14,10 @@ export default function FavoritesPage() {
 	const favoritesJsonLd = {
 		"@context": "https://schema.org",
 		"@type": "WebPage",
-		name: "즐겨찾기 & 복습 관리",
-		description:
-			"즐겨찾기한 면접 질문을 관리하고 효과적인 간격 반복 학습 일정으로 복습하세요.",
+		url: "https://cs-lab.0120.im/favorites",
+		name: "즐겨찾기",
+
+		description: "즐겨찾기한 면접 질문을 관리하고 복습하세요.",
 		mainContentOfPage: {
 			"@type": "WebPageElement",
 			isPartOf: {
@@ -30,7 +31,7 @@ export default function FavoritesPage() {
 					"@type": "ListItem",
 					position: 1,
 					name: "홈",
-					item: "https://cs-lab.0120.i/",
+					item: "https://cs-lab.0120.im/",
 				},
 				{
 					"@type": "ListItem",

@@ -45,7 +45,6 @@ export default async function CategoryLayout({
 		],
 	}
 
-	// 빵 부스러기 데이터 생성
 	const breadcrumbJsonLd = {
 		"@context": "https://schema.org",
 		"@type": "BreadcrumbList",

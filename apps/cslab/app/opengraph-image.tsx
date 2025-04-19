@@ -38,9 +38,9 @@ export default async function Image() {
 					padding: "40px",
 				}}
 			>
-				<div style={{ fontSize: 64, opacity: 0.8 }}>CS 면접 질문 모음집</div>
+				<div style={{ fontSize: 84, opacity: 0.8 }}>CS 면접 질문 모음집</div>
 
-				<div style={{ fontSize: 36, opacity: 0.7 }}>
+				<div style={{ fontSize: 56, opacity: 0.7 }}>
 					여러분의 취뽀를 기원합니다 🌟
 				</div>
 			</div>
