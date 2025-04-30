@@ -1,30 +1,53 @@
 {
-	"name": "0120im",
-	"private": true,
-	"scripts": {
-		"build": "turbo run build",
-		"build:www": "turbo run build --filter=www",
-		"dev": "turbo run dev",
-		"lint": "turbo run lint",
-		"format": "prettier --write \"**/*.{ts,tsx,md}\"",
-		"check-types": "turbo run check-types"
-	},
-	"devDependencies": {
-		"prettier": "^3.5.3",
-		"turbo": "^2.5.0",
-		"typescript": "5.8.2",
-		"@types/node": "^22.14.0",
-		"@types/react": "19.1.0",
-		"@types/react-dom": "19.1.1",
-		"eslint": "^9.24.0"
-	},
-	"dependencies": {
-		"next": "^15.2.4",
-		"react": "^19.1.0",
-		"react-dom": "^19.1.0"
-	},
-	"packageManager": "pnpm@10.7.1",
-	"engines": {
-		"node": ">=22"
-	}
+  "name": "0120im",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "build:www": "turbo run build --filter=www",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "check-types": "turbo run check-types"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@types/react": "19.1.0",
+    "@types/react-dom": "19.1.1",
+    "eslint": "^9.24.0",
+    "prettier": "^3.5.3",
+    "turbo": "^2.5.0",
+    "typescript": "5.8.2"
+  },
+  "dependencies": {
+    "@vanilla-extract/css": "^1.17.1",
+    "@vanilla-extract/dynamic": "^2.1.2",
+    "@vanilla-extract/sprinkles": "^1.6.3",
+    "next": "^15.2.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "eslint": "^9.24.0",
+      "prettier": "^3.5.3",
+      "typescript": "5.8.2",
+      "react": "19.1.0",
+      "react-dom": "19.1.0",
+      "@types/react": "19.1.0",
+      "@types/react-dom": "19.1.1",
+      "@vanilla-extract/css": "^1.17.1",
+      "@vanilla-extract/dynamic": "^2.1.2",
+      "@vanilla-extract/sprinkles": "^1.6.3"
+    },
+    "onlyBuiltDependencies": [
+      "core-js-pure",
+      "esbuild",
+      "sharp",
+      "workerd"
+    ]
+  },
+  "packageManager": "pnpm@10.7.1",
+  "engines": {
+    "node": ">=22"
+  }
 }
