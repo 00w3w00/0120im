@@ -1,12 +1,13 @@
 import { defineProperties, createSprinkles } from "@vanilla-extract/sprinkles";
-import { baseTokens } from "../tokens/base.css";
+import { baseTokens, breakpoints } from "../tokens/base.css";
+import { vars } from "../themes/globalThemes.css";
 
 const responsiveProperties = defineProperties({
   conditions: {
     mobile: {},
-    tablet: { "@media": `screen and (min-width: ${baseTokens.breakpoint.md})` },
-    desktop: { "@media": `screen and (min-width: ${baseTokens.breakpoint.lg})` },
-    wide: { "@media": `screen and (min-width: ${baseTokens.breakpoint.xl})` },
+    tablet: { "@media": `screen and (min-width: ${breakpoints.md})` },
+    desktop: { "@media": `screen and (min-width: ${breakpoints.lg})` },
+    wide: { "@media": `screen and (min-width: ${breakpoints.xl})` },
   },
   defaultCondition: "mobile",
   properties: {
@@ -21,6 +22,8 @@ const responsiveProperties = defineProperties({
       "space-between",
       "space-evenly",
     ],
+    outline: ["solid", "dashed", "dotted", "none"],
+    whiteSpace: ["normal", "nowrap", "pre", "pre-wrap", "pre-line", "break-spaces"],
     alignItems: ["stretch", "flex-start", "center", "flex-end", "baseline"],
     gap: baseTokens.space,
     rowGap: baseTokens.space,
@@ -82,24 +85,116 @@ const responsiveProperties = defineProperties({
       screen: "100vh",
     },
   },
+  shorthands: {
+    paddingX: ["paddingLeft", "paddingRight"],
+    paddingY: ["paddingTop", "paddingBottom"],
+    marginX: ["marginLeft", "marginRight"],
+    marginY: ["marginTop", "marginBottom"],
+  },
 });
 
 const colorProperties = defineProperties({
   properties: {
     color: {
-      inherit: "inherit",
-      current: "currentColor",
+      background: vars.color.background,
+      font: vars.color.font,
+      border: vars.color.borderColor,
+
+      "primary-400": vars.color.primary[400],
+      "primary-500": vars.color.primary[500],
+      "primary-600": vars.color.primary[600],
+      "primary-700": vars.color.primary[700],
+      "primary-800": vars.color.primary[800],
+
+      "gray-50": vars.color.gray[50],
+      "gray-100": vars.color.gray[100],
+      "gray-200": vars.color.gray[200],
+      "gray-300": vars.color.gray[300],
+      "gray-400": vars.color.gray[400],
+      "gray-500": vars.color.gray[500],
+      "gray-600": vars.color.gray[600],
+      "gray-700": vars.color.gray[700],
+      "gray-800": vars.color.gray[800],
+      "gray-900": vars.color.gray[900],
+      "gray-950": vars.color.gray[950],
+
       transparent: "transparent",
+      current: "currentColor",
+      inherit: "inherit",
+      initial: "initial",
+      unset: "unset",
+      white: "#ffffff",
+      black: "#000000",
     },
     backgroundColor: {
-      inherit: "inherit",
-      current: "currentColor",
+      // 기본 시맨틱 색상
+      background: vars.color.background,
+      font: vars.color.font,
+      border: vars.color.borderColor,
+
+      // Primary 코랄색들
+      "primary-400": vars.color.primary[400],
+      "primary-500": vars.color.primary[500],
+      "primary-600": vars.color.primary[600],
+      "primary-700": vars.color.primary[700],
+      "primary-800": vars.color.primary[800],
+
+      // Gray 색상들
+      "gray-50": vars.color.gray[50],
+      "gray-100": vars.color.gray[100],
+      "gray-200": vars.color.gray[200],
+      "gray-300": vars.color.gray[300],
+      "gray-400": vars.color.gray[400],
+      "gray-500": vars.color.gray[500],
+      "gray-600": vars.color.gray[600],
+      "gray-700": vars.color.gray[700],
+      "gray-800": vars.color.gray[800],
+      "gray-900": vars.color.gray[900],
+      "gray-950": vars.color.gray[950],
+
+      // 유틸리티 색상 (fallback 옵션들)
       transparent: "transparent",
+      current: "currentColor",
+      inherit: "inherit",
+      initial: "initial",
+      unset: "unset",
+      white: "#ffffff",
+      black: "#000000",
     },
     borderColor: {
-      inherit: "inherit",
-      current: "currentColor",
+      // 기본 시맨틱 색상
+      background: vars.color.background,
+      font: vars.color.font,
+      border: vars.color.borderColor,
+
+      // Primary 코랄색들
+      "primary-400": vars.color.primary[400],
+      "primary-500": vars.color.primary[500],
+      "primary-600": vars.color.primary[600],
+      "primary-700": vars.color.primary[700],
+      "primary-800": vars.color.primary[800],
+
+      // Gray 색상들
+      "gray-50": vars.color.gray[50],
+      "gray-100": vars.color.gray[100],
+      "gray-200": vars.color.gray[200],
+      "gray-300": vars.color.gray[300],
+      "gray-400": vars.color.gray[400],
+      "gray-500": vars.color.gray[500],
+      "gray-600": vars.color.gray[600],
+      "gray-700": vars.color.gray[700],
+      "gray-800": vars.color.gray[800],
+      "gray-900": vars.color.gray[900],
+      "gray-950": vars.color.gray[950],
+
+      // 유틸리티 색상 (fallback 옵션들)
       transparent: "transparent",
+      current: "currentColor",
+      inherit: "inherit",
+      initial: "initial",
+      unset: "unset",
+      white: "#ffffff",
+      black: "#000000",
     },
   },
 });
@@ -140,10 +235,37 @@ const unresponsiveProperties = defineProperties({
       "scale-95": "scale(0.95)",
       "scale-100": "scale(1)",
       "scale-105": "scale(1.05)",
+      "scale-110": "scale(1.1)",
       "translate-x-1": "translateX(4px)",
       "translate-y-1": "translateY(4px)",
       "-translate-x-1": "translateX(-4px)",
       "-translate-y-1": "translateY(-4px)",
+    },
+    transitionProperty: {
+      none: "none",
+      all: "all",
+      colors: "color, background-color, border-color, text-decoration-color, fill, stroke",
+      opacity: "opacity",
+      shadow: "box-shadow",
+      transform: "transform",
+      scale: "scale",
+    },
+    transitionDuration: {
+      75: "75ms",
+      100: "100ms",
+      150: "150ms",
+      200: "200ms",
+      250: "250ms",
+      300: "300ms",
+      500: "500ms",
+      700: "700ms",
+      1000: "1000ms",
+    },
+    transitionTimingFunction: {
+      linear: "linear",
+      in: "cubic-bezier(0.4, 0, 1, 1)",
+      out: "cubic-bezier(0, 0, 0.2, 1)",
+      "in-out": "cubic-bezier(0.4, 0, 0.2, 1)",
     },
     transition: {
       none: "none",

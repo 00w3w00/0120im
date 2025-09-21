@@ -42,10 +42,3 @@ globalStyle("ul, ol", {
   padding: 0,
   listStyle: "none",
 });
-
-globalStyle("button", {
-  background: "none",
-  outline: "none",
-  cursor: "pointer",
-  border: "none",
-});

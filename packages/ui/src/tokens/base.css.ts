@@ -1,6 +1,5 @@
 import { createGlobalTheme } from "@vanilla-extract/css";
 
-// Breakpoints as static values for media queries
 export const breakpoints = {
   sm: "640px",
   md: "768px",

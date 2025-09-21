@@ -1,12 +1,11 @@
-import js from "@eslint/js"
-import eslintConfigPrettier from "eslint-config-prettier"
-import importPlugin from "eslint-plugin-import"
-import jsxA11y from "eslint-plugin-jsx-a11y"
-import onlyWarn from "eslint-plugin-only-warn"
-import react from "eslint-plugin-react"
-import reactHooks from "eslint-plugin-react-hooks"
-import turboPlugin from "eslint-plugin-turbo"
-import tseslint from "typescript-eslint"
+import js from "@eslint/js";
+import eslintConfigPrettier from "eslint-config-prettier";
+import importPlugin from "eslint-plugin-import";
+import onlyWarn from "eslint-plugin-only-warn";
+import react from "eslint-plugin-react";
+import reactHooks from "eslint-plugin-react-hooks";
+import turboPlugin from "eslint-plugin-turbo";
+import tseslint from "typescript-eslint";
 /**
  * 공유 ESLint 설정
  * TypeScript 프로젝트를 위한 최적화된 규칙 설정
@@ -14,157 +13,134 @@ import tseslint from "typescript-eslint"
  * @type {import("eslint").Linter.Config[]}
  */
 export const config = [
-	// 기본 설정
-	js.configs.recommended,
-	...tseslint.configs.recommended,
-	eslintConfigPrettier, // Prettier와 충돌하는 규칙 비활성화 (마지막에 위치)
+  // 기본 설정
+  js.configs.recommended,
+  ...tseslint.configs.recommended,
+  eslintConfigPrettier, // Prettier와 충돌하는 규칙 비활성화 (마지막에 위치)
 
-	// 메인 규칙 설정
-	{
-		plugins: {
-			turbo: turboPlugin,
-			import: importPlugin,
-			react,
-			"react-hooks": reactHooks,
-			"jsx-a11y": jsxA11y,
-		},
-		settings: {
-			react: {
-				version: "detect", // React 버전 자동 감지
-			},
-		},
-		rules: {
-			// Import 관련 규칙
-			"import/order": [
-				"warn",
-				{
-					groups: [
-						"builtin", // Node.js 내장 모듈
-						"external", // 외부 라이브러리
-						"internal", // 프로젝트 내부 모듈
-						["parent", "sibling", "index"], // 상대 경로
-						"type", // type imports
-					],
-					pathGroups: [
-						{
-							pattern: "react",
-							group: "external",
-							position: "before",
-						},
-						{
-							pattern: "next/**",
-							group: "external",
-							position: "before",
-						},
-						{
-							pattern: "@repo/**",
-							group: "internal",
-							position: "before",
-						},
-						{
-							pattern: "@/**",
-							group: "internal",
-							position: "before",
-						},
-					],
-					pathGroupsExcludedImportTypes: ["react", "type"],
-					"newlines-between": "always",
-					alphabetize: {
-						order: "asc",
-						caseInsensitive: true,
-					},
-					distinctGroup: false,
-					warnOnUnassignedImports: true,
-				},
-			],
-			"import/no-duplicates": "error",
-			"import/no-unresolved": "off", // TypeScript가 처리
+  // 메인 규칙 설정
+  {
+    plugins: {
+      turbo: turboPlugin,
+      import: importPlugin,
+      react,
+      "react-hooks": reactHooks,
+    },
+    settings: {
+      react: {
+        version: "detect", // React 버전 자동 감지
+      },
+    },
+    rules: {
+      // Import 관련 규칙
+      "import/order": [
+        "warn",
+        {
+          groups: [
+            "builtin", // Node.js 내장 모듈
+            "external", // 외부 라이브러리
+            "internal", // 프로젝트 내부 모듈
+            ["parent", "sibling", "index"], // 상대 경로
+            "type", // type imports
+          ],
+          pathGroups: [
+            {
+              pattern: "react",
+              group: "external",
+              position: "before",
+            },
+            {
+              pattern: "next/**",
+              group: "external",
+              position: "before",
+            },
+            {
+              pattern: "@repo/**",
+              group: "internal",
+              position: "before",
+            },
+            {
+              pattern: "@/**",
+              group: "internal",
+              position: "before",
+            },
+          ],
+          pathGroupsExcludedImportTypes: ["react", "type"],
+          "newlines-between": "always",
+          alphabetize: {
+            order: "asc",
+            caseInsensitive: true,
+          },
+          distinctGroup: false,
+          warnOnUnassignedImports: true,
+        },
+      ],
+      "import/no-duplicates": "error",
+      "import/no-unresolved": "off", // TypeScript가 처리
 
-			// React 관련 규칙
-			"react/react-in-jsx-scope": "off", // React 17+ 자동 import
-			"react/prop-types": "off", // TypeScript 사용시 불필요
-			"react/jsx-uses-react": "off", // React 17+ 불필요
-			"react/jsx-uses-vars": "error",
-			"react/jsx-key": "error",
-			"react/jsx-no-duplicate-props": "error",
-			"react/jsx-no-undef": "error",
-			"react/jsx-pascal-case": "error",
-			"react/no-children-prop": "error",
-			"react/no-danger-with-children": "error",
-			"react/no-deprecated": "error",
-			"react/no-direct-mutation-state": "error",
-			"react/no-find-dom-node": "error",
-			"react/no-is-mounted": "error",
-			"react/no-render-return-value": "error",
-			"react/no-string-refs": "error",
-			"react/no-unescaped-entities": "error",
-			"react/no-unknown-property": "error",
-			"react/no-unsafe": "warn",
-			"react/require-render-return": "error",
-			"react/self-closing-comp": ["error", { component: true, html: true }],
+      // React 관련 규칙
+      "react/react-in-jsx-scope": "off", // React 17+ 자동 import
+      "react/prop-types": "off", // TypeScript 사용시 불필요
+      "react/jsx-uses-react": "off", // React 17+ 불필요
+      "react/jsx-uses-vars": "error",
+      "react/jsx-key": "error",
+      "react/jsx-no-duplicate-props": "error",
+      "react/jsx-no-undef": "error",
+      "react/jsx-pascal-case": "error",
+      "react/no-children-prop": "error",
+      "react/no-danger-with-children": "error",
+      "react/no-deprecated": "error",
+      "react/no-direct-mutation-state": "error",
+      "react/no-find-dom-node": "error",
+      "react/no-is-mounted": "error",
+      "react/no-render-return-value": "error",
+      "react/no-string-refs": "error",
+      "react/no-unescaped-entities": "error",
+      "react/no-unknown-property": "error",
+      "react/no-unsafe": "warn",
+      "react/require-render-return": "error",
+      "react/self-closing-comp": ["error", { component: true, html: true }],
 
-			// React Hooks 규칙
-			"react-hooks/rules-of-hooks": "error",
-			"react-hooks/exhaustive-deps": "warn",
+      // React Hooks 규칙
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn",
 
-			// 접근성 규칙 (기본적인 것들만)
-			"jsx-a11y/alt-text": "error",
-			"jsx-a11y/anchor-has-content": "error",
-			"jsx-a11y/anchor-is-valid": "error",
-			"jsx-a11y/aria-props": "error",
-			"jsx-a11y/aria-proptypes": "error",
-			"jsx-a11y/aria-unsupported-elements": "error",
-			"jsx-a11y/heading-has-content": "error",
-			"jsx-a11y/iframe-has-title": "error",
-			"jsx-a11y/img-redundant-alt": "error",
-			"jsx-a11y/no-access-key": "error",
+      // Turbo 관련
+      "turbo/no-undeclared-env-vars": "warn",
 
-			// // TailwindCSS 규칙
-			// "tailwindcss/classnames-order": "warn", // 클래스명 정렬
-			// "tailwindcss/enforces-negative-arbitrary-values": "error",
-			// "tailwindcss/enforces-shorthand": "error",
-			// "tailwindcss/migration-from-tailwind-2": "error",
-			// "tailwindcss/no-arbitrary-value": "off", // 임의 값 허용
-			// "tailwindcss/no-contradicting-classname": "error",
-			// "tailwindcss/no-custom-classname": "off", // 커스텀 클래스 허용
-			// "tailwindcss/no-unnecessary-arbitrary-value": "error",
+      // 코드 품질 규칙
+      "no-debugger": "error",
+      "no-console": ["warn", { allow: ["warn", "error", "info"] }],
+      "no-var": "error",
+      "no-duplicate-imports": "error",
+      curly: ["error", "all"],
+      eqeqeq: ["error", "always"],
+      "prefer-const": [
+        "error",
+        {
+          destructuring: "all",
+          ignoreReadBeforeAssign: false,
+        },
+      ],
+    },
+  },
 
-			// Turbo 관련
-			"turbo/no-undeclared-env-vars": "warn",
+  // 모든 오류를 경고로 변환 (개발 편의성)
+  {
+    plugins: {
+      onlyWarn,
+    },
+  },
 
-			// 코드 품질 규칙
-			"no-debugger": "error",
-			"no-console": ["warn", { allow: ["warn", "error", "info"] }],
-			"no-var": "error",
-			"no-duplicate-imports": "error",
-			curly: ["error", "all"],
-			eqeqeq: ["error", "always"],
-			"prefer-const": [
-				"error",
-				{
-					destructuring: "all",
-					ignoreReadBeforeAssign: false,
-				},
-			],
-		},
-	},
-
-	// 모든 오류를 경고로 변환 (개발 편의성)
-	{
-		plugins: {
-			onlyWarn,
-		},
-	},
-
-	// 무시할 파일/폴더
-	{
-		ignores: [
-			"**/dist/**",
-			"**/build/**",
-			"**/node_modules/**",
-			"**/.next/**",
-			"**/coverage/**",
-			"**/.turbo/**",
-		],
-	},
-]
+  // 무시할 파일/폴더
+  {
+    ignores: [
+      "**/dist/**",
+      "**/build/**",
+      "**/node_modules/**",
+      "**/.next/**",
+      "**/coverage/**",
+      "**/.turbo/**",
+    ],
+  },
+];
