@@ -1,7 +1,15 @@
+"use client"
+import dynamic from 'next/dynamic';
+
+const ThemeToggle = dynamic(() => import('@0120/ui').then(m => m.ThemeToggle), {
+  ssr: true
+});
+
 export default function Home() {
-	return (
-		<div className="">
-			<span className="text-4xl text-blue-950">Branch : WWW </span>
-		</div>
-	)
+  return (
+    <div className="">
+      <ThemeToggle />
+      <span className="">Branch : WWW </span>
+    </div>
+  );
 }

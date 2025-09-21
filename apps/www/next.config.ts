@@ -1,12 +1,9 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-	output: "export",
-	trailingSlash: true,
-	images: {
-		unoptimized: true,
-	},
-	assetPrefix:
-		process.env.NODE_ENV === "production" ? "https://www.0120.im/" : "",
-}
+import { createVanillaExtractPlugin } from "@vanilla-extract/next-plugin";
 
-export default nextConfig
+const withVanillaExtract = createVanillaExtractPlugin();
+
+const nextConfig: import("next").NextConfig = {
+  transpilePackages: ["@0120/ui"],
+};
+
+export default withVanillaExtract(nextConfig);
