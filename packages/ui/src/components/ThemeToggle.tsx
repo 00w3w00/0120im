@@ -21,7 +21,7 @@ export function ThemeToggle({
             variant='ghost'
             onClick={toggleTheme}
             className={` ${className} ${sprinkles({
-                opacity: isHydrating ? 50 : 100
+                opacity: isHydrating ? 0 : 100
             })}`} aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
         >
             {theme === "light" ? <Moon /> : <Sun />}
