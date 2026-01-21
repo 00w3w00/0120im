@@ -18,6 +18,6 @@
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@vanilla-extract/next-plugin": "^2.4.14",
-    "wrangler": "^4.10.0"
+    "wrangler": "^4.59.1"
   }
 }
